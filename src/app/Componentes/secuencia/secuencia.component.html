@@ -24,11 +24,47 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
               <div class="fh5co-intro fh5co-table-cell">
-                <h1 class="text-center">Completa la secuencia!</h1>
-                <p>Made with love by the fine folks at <a href="http://freehtml5.co">FreeHTML5.co</a></p>
+                <!--<h1 class="text-center">Completa la secuencia!</h1>-->
+                
+                <table>
+                    <thead>
+                      <tr>
+                        <th colspan="7"><h2>Complete la secuencia!</h2></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                            <input type="number" id="1" name="1" [disabled]="disabled1">
+                        </td>
+                        <td>
+                            <input type="number" id="2" name="2" disabled>
+                        </td>
+                        <td>
+                            <input type="number" id="3" name="3" disabled>
+                        </td>
+                        <td>
+                            <input type="number" id="4" name="4" [disabled]="disabled4">
+                        </td>
+                        <td>
+                            <input type="number" id="5" name="5" disabled>
+                        </td>
+                        <td>
+                            <input type="number" id="6" name="6" disabled>
+                        </td>
+                        <td>
+                            <input type="number" id="7" name="7" [disabled]="disabled7">
+                        </td>
+                      </tr>                      
+                    </tbody>
+                </table>
+                <br>
+                <button type="button" class="btn btn-primary" (click)="iniciar()" >INICIAR</button>
+                <button type="button" class="btn btn-success">RESPONDER</button>
+                
               </div>
             </div>
           </div>
         </div>
-    </div>            
+    </div>
 </div> <!-- END fh5co-wrap -->

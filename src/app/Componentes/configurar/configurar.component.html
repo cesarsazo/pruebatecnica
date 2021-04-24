@@ -25,7 +25,23 @@
             <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
               <div class="fh5co-intro fh5co-table-cell">
                 <h1 class="text-center">Configurar las secuencias!</h1>
-                <p>Made with love by the fine folks at <a href="http://freehtml5.co">FreeHTML5.co</a></p>
+                
+                <form (submit)="changeData($event)">
+                    <div class="form-group">
+                      <label>Cantidad de secuencias</label>
+                      <input type="number" class="form-control" id="secuencias" [(ngModel)]="Csecuencias" name="secuencias" >
+                    </div>
+                    <div class="form-group">
+                        <label>Minimo número en las secuencias</label>
+                      <input type="number" class="form-control" id="minsec" [(ngModel)]="CminSecuencia" name="minsec" >
+                    </div>
+                    <div class="form-group">
+                        <label>Maximo número en las secuencias</label>
+                      <input type="number" class="form-control" id="maxsec" [(ngModel)]="CmaxSecuencia" name="maxsec" >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+                            
               </div>
             </div>
           </div>
