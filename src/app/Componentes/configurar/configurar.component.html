@@ -5,12 +5,12 @@
                 <ul>
                     <li>
                         <a [routerLink]="['/']">
-                            <span>Inicio</span>
+                          <span style="font-size: large;">Inicio</span>
                         </a>
                     </li>
                     <li  class="fh5co-active">
                         <a [routerLink]="['/configurar']">
-                            <span>Configurar</span>
+                            <span style="font-size: large;">Configurar</span>
                         </a>
                     </li>
                 </ul>
@@ -24,8 +24,8 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
               <div class="fh5co-intro fh5co-table-cell">
-                <h1 class="text-center">Configurar las secuencias!</h1>
-                
+                <h2 >Configurar las secuencias!</h2>
+                <br><br><br>
                 <form (submit)="changeData($event)">
                     <div class="form-group">
                       <label>Cantidad de secuencias</label>
@@ -39,7 +39,8 @@
                         <label>Maximo número en las secuencias</label>
                       <input type="number" class="form-control" id="maxsec" [(ngModel)]="CmaxSecuencia" name="maxsec" >
                     </div>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-success  btn-lg btn-block">Guardar</button>
+                    <notifier-container></notifier-container>
                 </form>
                             
               </div>

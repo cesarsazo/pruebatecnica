@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { NotifierModule } from 'angular-notifier';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,14 @@ import { ConfigurarComponent } from './Componentes/configurar/configurar.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NotifierModule.withConfig({
+      position: {
+        horizontal: {
+          position: 'right'
+        }
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

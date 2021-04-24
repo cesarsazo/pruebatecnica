@@ -1,3 +1,30 @@
-input{
-    color: aqua;
+h2{
+    color: ivory;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
 }
+
+input{
+    color: black;
+    /*width: 290px;*/
+    font-size: 20px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+label {
+    color: cornsilk;
+    font-weight: bold;
+    display: block;
+    width: 275px;
+    text-align: left;
+    float: left;    
+    font-size: 20px;
+    }
+label:after { content: ": " }

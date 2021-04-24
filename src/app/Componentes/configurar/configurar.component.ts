@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParametrosService } from '../../Servicios/parametros.service';
+import { NotifierService } from 'angular-notifier'; 
 
 @Component({
   selector: 'app-configurar',
@@ -8,21 +8,15 @@ import { ParametrosService } from '../../Servicios/parametros.service';
 })
 export class ConfigurarComponent implements OnInit {
 
-  Csecuencias: number = this.service.getSecuencias();
-  CminSecuencia: number = this.service.getminSecuencia();
-  CmaxSecuencia: number = this.service.getmaxSecuencia();
+  private readonly notifier: NotifierService;
 
-  constructor(private service: ParametrosService) { 
-    this.Csecuencias = this.service.getSecuencias()
-    this.CminSecuencia = this.service.getminSecuencia()
-    this.CmaxSecuencia = this.service.getmaxSecuencia()
-  }
+  Csecuencias: number = +localStorage.getItem('Csecuencias');
+  CminSecuencia: number = +localStorage.getItem('CminSec');
+  CmaxSecuencia: number = +localStorage.getItem('CmaxSec');
 
-  ngOnInit(): void { 
-    this.Csecuencias = this.service.getSecuencias()
-    this.CminSecuencia = this.service.getminSecuencia()
-    this.CmaxSecuencia = this.service.getmaxSecuencia()
-  }
+  constructor( notifierService: NotifierService ) { this.notifier = notifierService; }
+
+  ngOnInit(): void { }
 
   changeData(event: any) {
     event.preventDefault();
@@ -31,12 +25,17 @@ export class ConfigurarComponent implements OnInit {
     const minsec = target.querySelector('#minsec').value
     const maxsec = target.querySelector('#maxsec').value
     try {
-      this.service.setSecuencias(secuencias)
-      this.service.setminSecuencia(minsec)
-      this.service.setmaxSecuencia(maxsec)
+      localStorage.setItem('Csecuencias', secuencias);
+      localStorage.setItem('CminSec', minsec);
+      localStorage.setItem('CmaxSec', maxsec);
+      this.notify('success', 'Parametros actualizados!')
     } catch (error) {
       alert(error)
     }    
+  }
+
+  notify(type, message) {
+    this.notifier.notify( type, message );
   }
   
 }

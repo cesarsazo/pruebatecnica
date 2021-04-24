@@ -9,7 +9,10 @@ export class FooterComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { 
+    localStorage.setItem('Csecuencias', '5');
+    localStorage.setItem('CminSec', '1');
+    localStorage.setItem('CmaxSec', '9');
+   }
 
 }

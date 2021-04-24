@@ -5,12 +5,12 @@
                 <ul>
                     <li  class="fh5co-active">
                         <a [routerLink]="['/']">
-                            <span>Inicio</span>
+                            <span style="font-size: large;">Inicio</span>
                         </a>
                     </li>
                     <li>
                         <a [routerLink]="['/configurar']">
-                            <span>Configurar</span>
+                            <span style="font-size: large;">Configurar</span>
                         </a>
                     </li>
                 </ul>
@@ -26,45 +26,72 @@
               <div class="fh5co-intro fh5co-table-cell">
                 <!--<h1 class="text-center">Completa la secuencia!</h1>-->
                 
-                <table>
-                    <thead>
-                      <tr>
-                        <th colspan="7"><h2>Complete la secuencia!</h2></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                            <input type="number" id="1" name="1" [disabled]="disabled1">
-                        </td>
-                        <td>
-                            <input type="number" id="2" name="2" disabled>
-                        </td>
-                        <td>
-                            <input type="number" id="3" name="3" disabled>
-                        </td>
-                        <td>
-                            <input type="number" id="4" name="4" [disabled]="disabled4">
-                        </td>
-                        <td>
-                            <input type="number" id="5" name="5" disabled>
-                        </td>
-                        <td>
-                            <input type="number" id="6" name="6" disabled>
-                        </td>
-                        <td>
-                            <input type="number" id="7" name="7" [disabled]="disabled7">
-                        </td>
-                      </tr>                      
-                    </tbody>
-                </table>
+                <!--Inicio tabla de secuencias-->
+                <div style="overflow-x:auto;">
+
+                    <table  [style.display]="showTable">
+                        <thead>
+                            <tr>
+                                <th colspan="7"><h2>Complete la secuencia #{{contadorSec}}!</h2></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <input type="number" id="1" name="1" [disabled]="disabled1">
+                                </td>
+                                <td>
+                                    <input type="number" id="2" name="2" disabled>
+                                </td>
+                                <td>
+                                    <input type="number" id="3" name="3" disabled>
+                                </td>
+                                <td>
+                                    <input type="number" id="4" name="4" [disabled]="disabled4">
+                                </td>
+                                <td>
+                                    <input type="number" id="5" name="5" disabled>
+                                </td>
+                                <td>
+                                    <input type="number" id="6" name="6" disabled>
+                                </td>
+                                <td>
+                                    <input type="number" id="7" name="7" [disabled]="disabled7">
+                                </td>
+                            </tr>                            
+                            </tbody>
+                    </table>
+
+                    <div [style.display]="showResult">
+                        <h1>DESEMPEÑO!</h1>
+                        <div class="progress" style="height: 100px;">                            
+                            <div class="progress-bar bg-success" role="progressbar" [style.width]="porcentaje +'%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                {{porcentaje}}%
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" (click)="iniciar()" [disabled]="disabledBtn" >INICIAR</button>
+                    </div>
+                    
+                </div>
+
+                <!--Fin tabla de secuencias-->
                 <br>
-                <button type="button" class="btn btn-primary" (click)="iniciar()" >INICIAR</button>
-                <button type="button" class="btn btn-success">RESPONDER</button>
                 
+                <div class="progress" style="height: 30px;" [style.display]="showTable">
+                    <div class="progress-bar progress-bar-striped" role="progressbar" [style.width]="donePercent +'%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        {{donePercent}}%
+                    </div>
+                </div>
+
+                <br><br>                
+                <div class="d-grid gap-2" [style.display]="showTable" >
+                    <button type="button" class="btn btn-primary" (click)="iniciar()" [disabled]="disabledBtn" >INICIAR</button>
+                    <button type="button" class="btn btn-success" (click)="responder()">RESPONDER</button>
+                </div>
+                <notifier-container></notifier-container>                
               </div>
-            </div>
+            </div>            
           </div>
-        </div>
-    </div>
-</div> <!-- END fh5co-wrap -->
+        </div>            
+    </div> 
+</div>

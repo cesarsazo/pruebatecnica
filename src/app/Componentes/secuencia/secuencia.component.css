@@ -3,10 +3,10 @@ table {
     border-collapse: collapse;
     background: white;
     border-radius: 6px;
-    overflow: hidden;
-    max-width: 800px;
+    table-layout: fixed;    
+    margin: auto;
     width: 100%;
-    margin: 0 auto;
+    height: 100%;
     position: relative;
 }
 table * {
@@ -81,12 +81,9 @@ blockquote {
     text-align: center;
 }
 
-
 input{
     font-size: 45px;
-    min-height: 50px;
-    max-height: 100px;
-    height: 80px;
+    height: 50px;
     width: 80px;
     margin-top: 5px;
     margin-bottom: 5px;
