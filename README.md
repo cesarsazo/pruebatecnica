@@ -28,6 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Deploy in EC2
 
+cp -vr /home/ubuntu/pruebatecnica/dist/pruebatecnica/* /var/www/html/
+
 cp -vr /home/ubuntu/pruebatecnica/dist/pruebatecnica/assets/ /var/www/html/
 
 ## Remove all
